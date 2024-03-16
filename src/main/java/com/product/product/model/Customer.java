@@ -17,4 +17,16 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Long cusId;
+
+    @Column
+    private String cusName;
+
+    @Column
+    private String address;
+
+    @Column
+    private int phoneNumber;
+
+    @Column
+    private String email;
 }
