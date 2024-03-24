@@ -25,7 +25,7 @@ public class Customer {
     private String address;
 
     @Column
-    private int phoneNumber;
+    private Long phoneNumber;
 
     @Column
     private String email;

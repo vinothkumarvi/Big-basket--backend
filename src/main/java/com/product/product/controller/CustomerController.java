@@ -19,8 +19,12 @@ public class CustomerController {
     private CustomerRepository customerRepository;
 
     @PostMapping("/addNewCustomer")
-    public Customer addCustomer(@RequestBody Customer customer) {
+    public Customer addCustomer(@RequestBody Customer customer) throws Exception {
 
+        Customer isExecistCustomer = customerRepository.findByPhoneNumber(customer.getPhoneNumber());
+        if (isExecistCustomer != null) {
+            throw new Exception("You have a Account in this Number " + customer.getPhoneNumber());
+        }
         Customer savedCustomer = customerRepository.save(customer);
         return savedCustomer;
     }

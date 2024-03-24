@@ -6,4 +6,6 @@ import com.product.product.model.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
+    public Customer findByPhoneNumber(Long phoneNumber);
+
 }
